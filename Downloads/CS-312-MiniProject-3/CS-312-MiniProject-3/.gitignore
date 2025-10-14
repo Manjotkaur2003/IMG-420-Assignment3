@@ -1,0 +1,6 @@
+# Ignore environment and system files
+node_modules/
+.env
+.vscode/
+AppData/
+*.log

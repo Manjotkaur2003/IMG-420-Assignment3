@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%= (typeof title !=='undefined' ? title : "Blog" ) %>
+  </title>
+
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="/" class="brand">MiniProject-3 Blog</a>
+    <div class="spacer"></div>
+    <% if (currentUser) { %>
+      <span>Hi, <%= currentUser.name %></span>
+      <a class="btn" href="/posts/new">New Post</a>
+      <form action="/signout" method="POST" style="display:inline;">
+        <button class="btn danger" type="submit">Sign out</button>
+      </form>
+      <% } else { %>
+        <a class="btn" href="/signin">Sign in</a>
+        <a class="btn outline" href="/signup">Sign up</a>
+        <% } %>
+  </nav>
+  <main class="container">
+    <% if (error && error.length) { %>
+      <div class="alert error">
+        <%= error[0] %>
+      </div>
+      <% } %>
+        <% if (success && success.length) { %>
+          <div class="alert success">
+            <%= success[0] %>
+          </div>
+          <% } %>
+            <h1>New Post</h1>
+            <form class="form" action="/posts" method="POST">
+              <label>Title
+                <input type="text" name="title" required />
+              </label>
+              <label>Body
+                <textarea name="body" rows="10" required></textarea>
+              </label>
+              <button class="btn" type="submit">Create</button>
+              <a class="btn outline" href="/">Cancel</a>
+            </form>
+  </main>
+  <footer class="footer">
+    <p>&copy; <%= new Date().getFullYear() %> CS-312 Mini-Project-3</p>
+  </footer>
+</body>
+
+</html>

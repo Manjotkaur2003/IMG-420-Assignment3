@@ -1,0 +1,25 @@
+{
+  "name": "cs-312-miniproject-3",
+  "version": "1.0.0",
+  "description": "Blog Web Application Using Node.js, Express.js, EJS, and PostgreSQL (Mini-Project-3)",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "lint": "echo \"(optional) add eslint\" && exit 0"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
