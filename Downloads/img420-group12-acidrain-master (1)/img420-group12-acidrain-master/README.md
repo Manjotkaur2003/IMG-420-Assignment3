@@ -1,0 +1,7 @@
+# IMG 420 Final Project
+
+## Module setup instructions
+1. Compile Godot source code
+2. Clone this repository into the `modules` directory within the Godot source
+3. Run scons to compile everything
+4. You should now be able to use an `AcidRainManager` node in Godot projects
